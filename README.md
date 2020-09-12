@@ -1,7 +1,7 @@
 # inception-resnet-V2-transfer-learning
 Using a newer iteration of the inception architecture to recognize bird species
 
-
+![architechure](/images/image00.png)
 
 ## Identifying bird species using InceptionResNetV2-based model
 ---
@@ -16,6 +16,3 @@ This repository uses data provided by CalTech (citaiton as follows)
 	Title = {{Caltech-UCSD Birds 200}},
 	Year = {2010}
 }
-
-
-The *inception* architechture introduce in 2013 (?) by researchers at Google is excellent for classifying images where the subject is likely to appear in various sizes/positions in the image data.
