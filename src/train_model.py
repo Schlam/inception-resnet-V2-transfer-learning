@@ -1,14 +1,6 @@
 import tensorflow as tf
-
-
-
-# Chose the optimizer and loss function for this model
-CALLBACKS = [reduce_lr]
-OPTIMIZER = tf.keras.optimizers.SGD(lr = 0.003)
-LOSS = tf.keras.losses.SparseCategoricalCrossentropy()
-batch_size = 16
-epochs = 2
-shuffle_on_fit = True
+from model import Model
+model = Model()
 
 
 # Set the specifications for any callback function you want to include
@@ -17,12 +9,11 @@ reduce_lr = tf.keras.callbacks.ReduceLROnPlateau(
     patience=5, min_lr=0.001
 )
 
-# Compile the model
-model.compile(
-    optimizer=OPTIMIZER,
-    loss=LOSS,
-    metrics=['accuracy']
-)
+
+callbacks = [reduce_lr]
+batch_size = 16
+epochs = 2
+shuffle_on_fit = True
 
 # Fit the model
 history = model.fit(
@@ -31,6 +22,6 @@ history = model.fit(
     batch_size=batch_size,
     epochs=epochs,
     shuffle_on_fit=shuffle,
-    callbacks=CALLBACKS,
+    callbacks=callbacks,
     validation_data=(x_test,y_test)
 )

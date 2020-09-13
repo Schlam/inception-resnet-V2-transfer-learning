@@ -1,15 +1,6 @@
 from tensorflow.keras.applications.inception_resnet_v2 import InceptionResNetV2
 import tensorflow as tf
 
-# Whether to use the 'max' pooling or 'avg' pooling layer as output
-POOLING = 'avg'
-
-tf.keras.backend.clear_session()
-
-base_model = InceptionResNetV2(
-    include_top=False,
-    pooling=POOLING
-)
 
 print(f"Number of model layers: {len(base_model.layers)}")
 print(f"Output shape: {base_model.output.shape}")
